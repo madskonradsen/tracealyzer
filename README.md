@@ -3,9 +3,7 @@
 Tracealyzer is a Chrome trace analyzer and receives trace-files from fx. Chrome Puppeter and returns relevant metrics that for example can be send to Graphite/Elasticsearch or used in a CI E2E testing setup to verify whether or not parts of your webapps has regressed.
 
 ## Example output
-
-
-## Example usage
+```
 {
     "profiling": {
         "categories": {
@@ -90,6 +88,29 @@ Tracealyzer is a Chrome trace analyzer and receives trace-files from fx. Chrome 
         }
     }
 }
+```
+
+## Example usage
+```
+const puppeteer = require('puppeteer');
+const tracealyzer = require('tracealyzer');
+
+const TRACE_FILE = 'test/data/trace.json';
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.tracing.start({path: TRACE_FILE});
+  await page.goto('https://www.wired.com');
+  await page.tracing.stop();
+
+  await browser.close();
+  
+  const metrics = tracealyzer(TRACE_FILE);
+  
+  // do something with fx. metrics.rendering.fps.mean
+})();
+```
 
 ### Credits
 
