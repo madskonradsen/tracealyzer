@@ -90,7 +90,7 @@ Tracealyzer is a Chrome trace analyzer and receives trace-files from fx. Chrome 
 }
 ```
 
-## Example usage
+## Example usage using Chrome puppeteer
 ```
 const puppeteer = require('puppeteer');
 const tracealyzer = require('tracealyzer');
