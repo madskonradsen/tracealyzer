@@ -1,0 +1,17 @@
+{
+  "name": "tracealyzer",
+  "version": "0.9.0",
+  "description": "A small package that reads Chrome trace files and outputs relevant information and statistics",
+  "main": "index.js",
+  "scripts": {
+    "test": "$(npm bin)/mocha"
+  },
+  "author": "Mads K",
+  "license": "MIT",
+  "dependencies": {
+    "devtools-timeline-model": "^1.3.1"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
