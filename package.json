@@ -1,6 +1,6 @@
 {
   "name": "tracealyzer",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "A small package that reads Chrome trace files and outputs relevant information and statistics",
   "main": "index.js",
   "scripts": {
