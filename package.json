@@ -3,6 +3,7 @@
   "version": "0.9.2",
   "description": "A small package that reads Chrome trace files and outputs relevant information and statistics",
   "main": "index.js",
+  "url": "http://github.com/madskonradsen/tracealyzer",
   "scripts": {
     "test": "$(npm bin)/mocha"
   },
