@@ -6,8 +6,6 @@ const TRACE_FILE = './test/data/trace.json';
 
 const result = index(TRACE_FILE);
 
-console.log(JSON.stringify(result));
-
 it('fps should be reported correctly', function() {
 	assert.equal(result.rendering.fps.mean, 8.94);
 	assert.equal(result.rendering.fps.hi, 9345.79);
