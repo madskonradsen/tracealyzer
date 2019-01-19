@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/madskonradsen/tracealyzer.svg?branch=master)](https://travis-ci.org/madskonradsen/tracealyzer)
+[![Build Status](https://travis-ci.org/madskonradsen/tracealyzer.svg?branch=master)](https://travis-ci.org/madskonradsen/tracealyzer) [![Greenkeeper badge](https://badges.greenkeeper.io/madskonradsen/tracealyzer.svg)](https://greenkeeper.io/)
 
 # Tracealyzer
 
