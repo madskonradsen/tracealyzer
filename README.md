@@ -1,8 +1,37 @@
 [![Build Status](https://travis-ci.org/madskonradsen/tracealyzer.svg?branch=master)](https://travis-ci.org/madskonradsen/tracealyzer)
+[![Coverage Status](https://coveralls.io/repos/github/madskonradsen/tracealyzer/badge.svg?branch=coverage)](https://coveralls.io/github/madskonradsen/tracealyzer?branch=coverage)
 
 # Tracealyzer
 
-Tracealyzer is a Chrome trace analyzer and receives trace-files from fx. Chrome Puppeter and returns relevant metrics that for example can be send to Graphite/Elasticsearch or used in a CI E2E testing setup to verify whether or not parts of your webapps has regressed.
+Tracealyzer is a Chrome trace analyzer and receives trace-files from fx. Chrome Puppeter and returns relevant metrics that for example can be send to Graphite/Elasticsearch or used in a CI E2E testing setup to verify whether or not parts of your webapps have regressed.
+
+## Installation
+
+`npm i tracealyzer`
+
+https://www.npmjs.com/package/tracealyzer
+
+## Example usage using Chrome puppeteer
+```
+const puppeteer = require('puppeteer');
+const tracealyzer = require('tracealyzer');
+
+const TRACE_FILE = 'test/data/trace.json';
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.tracing.start({path: TRACE_FILE});
+  await page.goto('https://www.wired.com');
+  await page.tracing.stop();
+
+  await browser.close();
+  
+  const metrics = tracealyzer(TRACE_FILE);
+  
+  // do something with fx. metrics.rendering.fps.mean
+})();
+```
 
 ## Example output
 ```
@@ -90,28 +119,6 @@ Tracealyzer is a Chrome trace analyzer and receives trace-files from fx. Chrome 
         }
     }
 }
-```
-
-## Example usage using Chrome puppeteer
-```
-const puppeteer = require('puppeteer');
-const tracealyzer = require('tracealyzer');
-
-const TRACE_FILE = 'test/data/trace.json';
-
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.tracing.start({path: TRACE_FILE});
-  await page.goto('https://www.wired.com');
-  await page.tracing.stop();
-
-  await browser.close();
-  
-  const metrics = tracealyzer(TRACE_FILE);
-  
-  // do something with fx. metrics.rendering.fps.mean
-})();
 ```
 
 ### Credits

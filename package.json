@@ -1,11 +1,11 @@
 {
   "name": "tracealyzer",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "A small package that reads Chrome trace files and outputs relevant information and statistics",
   "main": "index.js",
   "url": "http://github.com/madskonradsen/tracealyzer",
   "scripts": {
-    "test": "$(npm bin)/mocha"
+    "test": "nyc $(npm bin)/mocha && nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Mads K",
   "license": "MIT",
@@ -13,6 +13,8 @@
     "devtools-timeline-model": "^1.4.0"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "coveralls": "^3.0.3",
+    "mocha": "^5.2.0",
+    "nyc": "^13.3.0"
   }
 }
