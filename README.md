@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/madskonradsen/tracealyzer.svg?branch=master)](https://travis-ci.org/madskonradsen/tracealyzer)
+[![Coverage Status](https://coveralls.io/repos/github/madskonradsen/tracealyzer/badge.svg?branch=coverage)](https://coveralls.io/github/madskonradsen/tracealyzer?branch=coverage)
 
 # Tracealyzer
 
