@@ -1,10 +1,10 @@
 const assert = require('assert');
 
-const index = require('./../index');
+const tracealyzer = require('./../index');
 
 const TRACE_FILE = './test/data/trace.json';
 
-const result = index(TRACE_FILE);
+const result = tracealyzer(TRACE_FILE);
 
 it('fps should be reported correctly', function() {
 	assert.equal(result.rendering.fps.mean, 8.94);
