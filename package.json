@@ -1,6 +1,13 @@
 {
   "name": "tracealyzer",
-  "version": "0.10.2",
+  "version": "0.10.3",
+  "keywords": [
+    "chrome",
+    "devtool",
+    "timeline",
+    "fps",
+    "performance"
+  ],
   "description": "A small package that reads Chrome trace files and outputs relevant information and statistics",
   "main": "index.js",
   "url": "http://github.com/madskonradsen/tracealyzer",
