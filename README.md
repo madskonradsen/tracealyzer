@@ -36,6 +36,17 @@ const TRACE_FILE = 'test/data/trace.json';
 ## Example output
 ```
 {
+    "rendering": {
+        "firstPaint": 0.031781,
+        "forcedReflowEvents": 82,
+        "fps": {
+            "mean": 8.94,
+            "variance": 1599518.62,
+            "sd": 1264.72,
+            "lo": 2,
+            "hi": 9345.79
+        }
+    },
     "profiling": {
         "categories": {
             "scripting": 2477.3910000920296,
@@ -105,17 +116,6 @@ const TRACE_FILE = 'test/data/trace.json';
             "f:P_@536": 7.683999985456467,
             "f:each@503": 7.172000020742416
 
-        }
-    },
-    "rendering": {
-        "firstPaint": 0.031781,
-        "forcedReflowEvents": 82,
-        "fps": {
-            "mean": 8.94,
-            "variance": 1599518.62,
-            "sd": 1264.72,
-            "lo": 2,
-            "hi": 9345.79
         }
     }
 }
